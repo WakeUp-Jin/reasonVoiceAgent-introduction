@@ -1,3 +1,10 @@
+# Reason Voice Agent
+
+> AI 驱动的音频创作协同平台 —— 让 AI 智能体帮你完成配音、音效、BGM 的智能匹配与生成
+
+**在线演示**：https://xjk.github.io/reasonVoiceAgent-introduction/
+
+
 ## 一、音频制作Agent项目的介绍
 **音频创作者和Agent在同一个平台上面完成音频的制作**，这个项目就是音频创作协同平台，里面的Agent就是音频制作Agent
 
@@ -78,3 +85,20 @@
 只要评估出来这两层调用方式是正确的，那么最终的Agent结果就不会出现大问题，或者说出现问题的地方逐渐可以缩小为工具输出，而不是LLM的问题
 - 这样保证了Agent运行的稳定性
 - 一旦线上出现问题，可以快速聚焦到工具输出，排查路径很清晰，大幅降低了排查成本
+
+
+## 技术栈
+
+#### 前端
+- 框架 / 构建：`React 19` `TypeScript` `Vite`
+- 样式 / UI：`Tailwind CSS v4` `Radix UI` `Lucide` `Motion`
+- 状态管理：`Zustand` `Immer`
+- 音频 / 交互：`Howler.js` `Tone.js` `dnd-kit` `AntV G6`
+
+#### 后端
+- 运行时 / 框架：`Node.js 20` `TypeScript` `Koa`
+- AI / Agent：`LangChain` `LangGraph` `OpenAI SDK` `Anthropic`
+- 语音合成：`ElevenLabs` `Azure Speech SDK`
+- 数据 / 存储：`Prisma` `ChromaDB` `Redis` `阿里云 OSS`
+- 可观测性：`Langfuse` `OpenTelemetry` `FFmpeg`
+- 音频处理：`FFmpeg`
