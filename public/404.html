@@ -3,16 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      // SPA redirect: GitHub Pages serves this on 404,
-      // we redirect to index.html with the path preserved as a query param
-      var pathSegmentsToKeep = 1;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
+      var repo = '/reasonVoiceAgent-introduction';
+      var fullPath = window.location.pathname;
+      var relativePath = fullPath.startsWith(repo)
+        ? fullPath.slice(repo.length)
+        : fullPath;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      window.location.replace(
+        window.location.origin + repo + '/?p=' + encodeURIComponent(relativePath + search + hash)
       );
     </script>
   </head>
