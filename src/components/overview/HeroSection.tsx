@@ -23,6 +23,9 @@ export function HeroSection() {
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [playbackRate, setPlaybackRate] = useState(1);
+
+  const PLAYBACK_RATES = [1, 1.5, 2] as const;
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
@@ -44,6 +47,15 @@ export function HeroSection() {
     video.muted = !video.muted;
     setIsMuted(video.muted);
   }, []);
+
+  const cyclePlaybackRate = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const currentIdx = PLAYBACK_RATES.indexOf(playbackRate as (typeof PLAYBACK_RATES)[number]);
+    const nextRate = PLAYBACK_RATES[(currentIdx + 1) % PLAYBACK_RATES.length];
+    video.playbackRate = nextRate;
+    setPlaybackRate(nextRate);
+  }, [playbackRate]);
 
   const seekTo = useCallback((clientX: number) => {
     const bar = progressRef.current;
@@ -199,6 +211,14 @@ export function HeroSection() {
                   {isMuted
                     ? <VolumeX className="h-4 w-4" />
                     : <Volume2 className="h-4 w-4" />}
+                </button>
+
+                {/* Playback Rate */}
+                <button
+                  onClick={cyclePlaybackRate}
+                  className="flex h-7 shrink-0 items-center justify-center rounded-md px-1.5 text-xs font-medium tabular-nums text-neutral-600 transition-colors hover:bg-neutral-200 hover:text-black"
+                >
+                  {playbackRate}x
                 </button>
 
                 {/* Fullscreen */}

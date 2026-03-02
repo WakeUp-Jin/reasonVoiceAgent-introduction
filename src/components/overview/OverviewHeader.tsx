@@ -20,7 +20,7 @@ export function OverviewHeader() {
           <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-black sm:h-8 sm:w-8">
             <span className="text-xs font-bold text-white sm:text-sm">A</span>
           </div>
-          <span className="text-base font-semibold text-black sm:text-lg">Reason AudioAgent</span>
+          <span className="text-base font-semibold text-black sm:text-lg">Reason VoiceAgent</span>
         </a>
 
         {/* Desktop Navigation */}

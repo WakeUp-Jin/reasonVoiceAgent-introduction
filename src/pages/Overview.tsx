@@ -16,7 +16,7 @@ function Overview() {
               <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-black sm:h-8 sm:w-8">
                 <span className="text-xs font-bold text-white sm:text-sm">A</span>
               </div>
-              <span className="text-base font-semibold text-black sm:text-lg">Reason AudioAgent</span>
+              <span className="text-base font-semibold text-black sm:text-lg">Reason VoiceAgent</span>
             </div>
 
             {/* Links */}
@@ -34,7 +34,7 @@ function Overview() {
 
             {/* Copyright */}
             <p className="text-xs text-neutral-400 sm:text-sm">
-              © 2025 Reason AudioAgent. All rights reserved.
+              © 2025 Reason VoiceAgent. All rights reserved.
             </p>
           </div>
         </div>
