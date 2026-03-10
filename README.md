@@ -10,7 +10,7 @@
 
 <div align="center">
   <figure>
-    <a href="https://excalidraw.com" target="_blank" rel="noopener">
+    <a target="_blank" rel="noopener">
       <img src="./image/home.png" alt="Product showcase" />
     </a>
     <figcaption>
