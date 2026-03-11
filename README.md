@@ -4,6 +4,7 @@
 
 **在线介绍演示**：https://wakeup-jin.github.io/reasonVoiceAgent-introduction/
 
+**⚠️ 本仓库非源码，只是一个简单的介绍网站**
 
 ## 一、音频制作Agent项目的介绍
 **音频创作者和Agent在同一个平台上面完成音频的制作**，这个项目就是音频创作协同平台，里面的Agent就是音频制作Agent
